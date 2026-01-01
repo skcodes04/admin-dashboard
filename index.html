@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Card Design</title>
+    <!-- icon CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     
+      <div class="dashboard">
+                
+              <!-- sidebar menu -->
+                <aside class="sidebar">
+                  <div class="toggle-icon">
+                    <h2>Admin Panel</h2>
+                    <!-- <i class="fa-solid fa-circle-xmark"></i> -->
+                  <i class="fa-solid fa-bars" id="toggleBtn"></i>
+                  </div>
+                    <ul>
+                        <li class="active"><a href="#"><i class="fa-solid fa-house"></i><p>Dashboard</p></a></li>
+                        <li><a href="#"> <i class="fa-solid fa-user"></i><p>Users</p></a></li>
+                        <li> <a href="#"><i class="fa-solid fa-cart-shopping"></i><p>Orders</p></a></li>
+                        <li><a href="#"><i class="fa-solid fa-dollar-sign"></i><p>Revenue</p></a></li>
+                        <li><a href="#"><i class="fa-solid fa-chart-line"></i><p>Analytics</p></a></li>
+                        <li><a href="#"><i class="fa-solid fa-gear"></i><p>Settings</p></a></li>
+                        <li class="logout"><a href="#"> <i class="fa-solid fa-right-from-bracket"></i><p>Logout</p></a></li>
+
+                    </ul>
+                </aside>
+
+                <div class="overlay"></div>
+
+        <!-- main content -->
+        <main class="main-content">
+            <div class="navbar">
+                <h2>Dashboard</h2>
+                <div class="user">
+                    <img src="https://sp.yimg.com/ib/th/id/OIP.X5qU1BBHEa3l1SL9cvEA_wHaE8?pid=Api&w=148&h=148&c=7&rs=1" alt="admin-img">
+                    <p>Admin</p>
+                </div>
+            </div>
+    
+        <section class="stats">
+        <div class="stat-card users">
+          <div class="icon"><i class="fa-solid fa-user"></i></div>
+          <div class="info">
+            <span>Total Users</span>
+            <h2 class="counter" data-target="1245">0</h2>
+          </div>
+        </div>
+        <div class="stat-card revenue">
+          <div class="icon"><i class="fa-solid fa-dollar-sign"></i></div>
+          <div class="info">
+            <span>Revenue</span>
+            <h2 class="counter" data-target="12430" data-prefix="$">0</h2>
+          </div>
+        </div>
+        <div class="stat-card orders">
+          <div class="icon"><i class="fa-solid fa-cart-shopping"></i></div>
+          <div class="info">
+            <span>Orders</span>
+            <h2 class="counter" data-target="320">0</h2>
+          </div>
+        </div>
+        <div class="stat-card growth">
+          <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
+          <div class="info">
+            <span>Growth</span>
+            <h2 class="counter" data-target="14" data-suffix="%">0</h2>
+          </div>
+        </div>
+      </section>
+
+        <h2>Recent Users</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>john@gmail.com</td>
+            <td>Admin</td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <td>Alex Smith</td>
+            <td>alex@gmail.com</td>
+            <td>User</td><td>Inactive</td>
+          </tr>
+          <tr>
+            <td>Johnson</td>
+            <td>johnson@gmail.com</td>
+            <td>User</td><td>Active</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
+
+     
+
+    <script src="script.js"></script>
+
+</body>
+</html>

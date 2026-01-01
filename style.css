@@ -1,0 +1,277 @@
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background: #0f172a;
+    color: #ccc;
+}
+
+.dashboard{
+    min-height: 100svh;
+    display: flex;
+}
+
+.sidebar{
+    position: fixed;
+    top:0;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    background: #111827;
+    padding: 10px;
+    transition: width 0.4s ease; 
+}
+
+.sidebar.active{
+    width: 250px;
+    padding: 20px;
+}
+
+.toggle-icon{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    position: relative;
+    height: 40px;
+}
+
+
+.toggle-icon h2{
+    font-size: 1.2rem;
+    opacity: 0;
+}
+
+.sidebar.active .toggle-icon h2{
+    opacity: 1;
+}
+
+#toggleBtn{
+    font-size: 18px;
+    font-weight: bold;
+    color: #ccc;
+    position: absolute;
+    right: 0;
+    width: 40px;
+}
+
+.sidebar ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: calc(100svh - 100px);
+}
+
+.sidebar ul li{
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    font-size: 14px;
+    color: #ccc;
+    text-decoration: none;
+    padding: 0 14px;
+    gap: 10px;
+}
+
+.sidebar ul li a i{
+    font-size: 16px;
+    width: 20px;
+}
+
+
+.sidebar ul li a p{
+    opacity: 0;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    transform: translateX(-10px);
+}
+
+.sidebar.active ul li a p{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.sidebar ul li:hover, .sidebar ul li.active{
+    background: #1f2937;
+    border-radius: 5px;
+}
+
+li.logout{
+    background: rgba(255, 0, 0, 0.15);
+    border-radius: 5px;
+}
+
+ul li:last-child{
+    margin-top: auto;
+}
+
+.main-content{
+    margin-left: 250px;
+    padding: 20px 40px;
+    flex: 1;
+    transition: margin-left 0.4s ease;
+}
+
+.sidebar:not(.active) ~ .main-content {
+    margin-left: 60px;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.user img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.stats{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.stat-card{
+    background: #111827;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.stat-card .icon{
+    font-size: 1.2rem;
+}
+
+.stat-card .info span{
+    font-size: 0.9rem;
+}
+
+.stat-card .info h2{
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+.users .icon{
+    color: brown;
+}
+
+.revenue .icon{
+    color: blue;
+}
+
+.growth .icon{
+    color: green;
+}
+
+.orders .icon{
+    color: yellowgreen;
+}
+
+.users{
+    border-left: 4px solid brown;
+    border-right: 4px solid brown;
+}
+
+.revenue{
+    border-left: 4px solid blue;
+    border-right: 4px solid blue;
+}
+
+.orders{
+    border-left: 4px solid yellowgreen;
+    border-right: 4px solid yellowgreen;
+}
+
+.growth{
+    border-left: 4px solid green;
+    border-right: 4px solid green;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #111827;
+}
+
+table th, table td{
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #1f2937;
+}
+
+table th{
+    background: #1f2937;
+}
+
+table tr:hover{
+    background: #1f2937;
+}
+
+
+  @media(max-width:768px){
+      .dashboard { 
+        flex-direction:column; 
+      }
+
+     .sidebar{
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100svh;
+    z-index: 1000;
+  } 
+
+  .sidebar.active{
+    left: 0;
+  }
+      
+    .main-content { 
+        margin-left: 0 ; 
+      }
+  .stats { 
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); 
+  }
+  
+  table{
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+.overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    z-index: 900;
+  }
+
+  .sidebar.active ~ .overlay{
+    display: block;
+  }  
+}
